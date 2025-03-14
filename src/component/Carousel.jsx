@@ -31,7 +31,7 @@ export default function Carousel() {
             </div>
 
             {/* Carosello che occupa il resto dello schermo */}
-            <div className="h-full bg-blue-500">
+            <div className="h-full ">
                 <Swiper
                     className='h-full'
                     modules={[Pagination, Scrollbar, A11y]}
@@ -39,22 +39,24 @@ export default function Carousel() {
                     slidesPerView={1}
                     onSwiper={(swiper) => (swiperRef.current = swiper)} // Salviamo l'istanza di Swiper
                 >
-                    <SwiperSlide className='h-full flex items-center justify-center text-white text-2xl'>
-                        <Home />
+                    <SwiperSlide className='h-full bg-blue-500 text-white text-2xl'>
+                        <div className='flex justify-center items-center h-full ml-20'>
+                            <Home />
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='h-full flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-yellow-500 flex items-center justify-center text-white text-2xl'>
                         <Eventi />
                     </SwiperSlide>
-                    <SwiperSlide className='h-full flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-red-500 flex items-center justify-center text-white text-2xl'>
                         <ChiSiamo />
                     </SwiperSlide>
-                    <SwiperSlide className='h-full flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-green-500 flex items-center justify-center text-white text-2xl'>
                         <Contatti />
                     </SwiperSlide>
-                    <SwiperSlide className='h-full flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-amber-700 flex items-center justify-center text-white text-2xl'>
                         <Archivio />
                     </SwiperSlide>
-                    <SwiperSlide className='h-full flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-blue-500 flex items-center justify-center text-white text-2xl'>
                         <Utente />
                     </SwiperSlide>
                 </Swiper>
