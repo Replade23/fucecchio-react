@@ -1,0 +1,69 @@
+/* Stile base del calendario */
+.react-calendar {
+    width: 100%; /* Adatta la larghezza */
+  height: 100%; /* Evita che cresca troppo */
+}
+
+/* Barra di navigazione (mese/anno e frecce) */
+.react-calendar__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.react-calendar__navigation__label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.react-calendar__navigation button {
+    background: none;
+    text-transform: uppercase;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.react-calendar__navigation button:hover {
+    color: #000;
+}
+
+/* Giorni della settimana */
+.react-calendar__month-view__weekdays {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Griglia dei giorni */
+.react-calendar__tile {
+    border-radius: 6px;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Giorno selezionato */
+.react-calendar__tile--active {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* Giorno corrente */
+.react-calendar__tile--now {
+    background: #1e90ff;
+    color: black;
+    font-weight: bold;
+    border-radius: 15%;
+}
+
+/* Effetto hover sui giorni */
+.react-calendar__tile:hover {
+    background: #ddd;
+    cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useEffect } from "react";
 import Navbar from './Navbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -23,6 +24,12 @@ export default function Carousel() {
         }
     };
 
+    useEffect(() => {
+        document.querySelectorAll(".swiper").forEach((el) => {
+          el.swiper.allowTouchMove = false;
+        });
+      }, []);
+
     return (
         <div className='relative h-7/8'>
             <div className='absolute z-10 -translate-y-1/2 top-1/2'>
@@ -35,7 +42,6 @@ export default function Carousel() {
                 <Swiper
                     className='h-full'
                     modules={[Pagination, Scrollbar, A11y]}
-                    spaceBetween={50}
                     slidesPerView={1}
                     onSwiper={(swiper) => (swiperRef.current = swiper)} // Salviamo l'istanza di Swiper
                 >

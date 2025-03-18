@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 @theme {}
+
+.test {
+    width: 50px !important;
+}
