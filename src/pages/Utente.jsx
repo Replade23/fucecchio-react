@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../../firebaseConfig";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import Login from "../component/Login"; // Importa il componente di login
 import SignUp from "../component/SignUp"; // Importa il componente di registrazione
 import UtenteLoggato from "../component/UtenteLoggato";

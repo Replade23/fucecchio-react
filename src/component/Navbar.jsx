@@ -20,7 +20,7 @@ export default function Navbar({ goToSlide }) {
             <button
                 onClick={() => handleClick(0)}
                 className={`p-4 rounded-4xl bg-black flex items-center transition-all duration-300 
-                    ${selected === 0 ? "w-40" : "w-14"} `}
+                    ${selected === 0 ? "w-30" : "w-14"} `}
             >
                 <House />
                 {selected === 0 && <span className="ml-2">{pageNames[0]}</span>} {/* Mostra nome solo se selezionato */}
@@ -28,7 +28,7 @@ export default function Navbar({ goToSlide }) {
             <button
                 onClick={() => handleClick(1)}
                 className={`p-4 rounded-4xl bg-black flex items-center transition-all duration-300 
-                    ${selected === 1 ? "w-40" : "w-14"} `}
+                    ${selected === 1 ? "w-30" : "w-14"} `}
             >
                 <CalendarDays />
                 {selected === 1 && <span className="ml-2">{pageNames[1]}</span>}
@@ -36,7 +36,7 @@ export default function Navbar({ goToSlide }) {
             <button
                 onClick={() => handleClick(2)}
                 className={`p-4 rounded-4xl bg-black flex items-center transition-all duration-300 
-                    ${selected === 2 ? "w-40" : "w-14"} `}
+                    ${selected === 2 ? "w-30" : "w-14"} `}
             >
                 <User />
                 {selected === 2 && <span className="ml-2">{pageNames[2]}</span>}
