@@ -3,6 +3,7 @@ import { auth } from "../../firebaseConfig";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import Login from "../component/Login"; // Importa il componente di login
 import SignUp from "../component/SignUp"; // Importa il componente di registrazione
+import UtenteLoggato from "../component/UtenteLoggato";
 
 export default function Utente() {
   const [user, setUser] = useState(null);
@@ -20,10 +21,7 @@ export default function Utente() {
     <div className="flex justify-center items-center h-full">
       {user ? (
         // Se l'utente è autenticato, mostra la pagina utente
-        <div className="bg-white">
-          <h2>Benvenuto, {user.email}!</h2>
-          <button onClick={() => signOut(auth)}>Logout</button>
-        </div>
+        <UtenteLoggato />
       ) : (
         // Se non è autenticato, mostra il form di login e registrazione
         <div className="w-120 bg-gray-500 px-10 py-10 rounded-4xl">

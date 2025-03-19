@@ -3,14 +3,18 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "TUO_API_KEY",
-  authDomain: "TUO_PROGETTO.firebaseapp.com",
-  projectId: "TUO_PROJECT_ID",
-  storageBucket: "TUO_PROJECT.appspot.com",
-  messagingSenderId: "TUO_MESSAGING_SENDER_ID",
-  appId: "TUO_APP_ID"
+  apiKey: "AIzaSyA5Lfr77wHo1MWtEs2TCifJFFu73mQSKpQ",
+  authDomain: "fucecchio-react.firebaseapp.com",
+  projectId: "fucecchio-react",
+  storageBucket: "fucecchio-react.firebasestorage.app",
+  messagingSenderId: "615957528741",
+  appId: "1:615957528741:web:1d67ac7b20e7e1eef50d4c"
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+
+// Ottieni istanze di Auth e Firestore
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+export { auth, db };

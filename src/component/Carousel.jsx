@@ -4,9 +4,6 @@ import Navbar from './Navbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Home from '../pages/Home'
-import Archivio from '../pages/Archivio'
-import Contatti from '../pages/Contatti'
-import ChiSiamo from '../pages/ChiSiamo'
 import Eventi from '../pages/Eventi'
 import Utente from '../pages/Utente'
 
@@ -50,17 +47,8 @@ export default function Carousel() {
                             <Home />
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className='h-full bg-yellow-500 flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-blue-500 flex items-center justify-center text-white text-2xl'>
                         <Eventi />
-                    </SwiperSlide>
-                    <SwiperSlide className='h-full bg-red-500 flex items-center justify-center text-white text-2xl'>
-                        <ChiSiamo />
-                    </SwiperSlide>
-                    <SwiperSlide className='h-full bg-green-500 flex items-center justify-center text-white text-2xl'>
-                        <Contatti />
-                    </SwiperSlide>
-                    <SwiperSlide className='h-full bg-amber-700 flex items-center justify-center text-white text-2xl'>
-                        <Archivio />
                     </SwiperSlide>
                     <SwiperSlide className='h-full bg-blue-500 flex items-center justify-center text-white text-2xl'>
                         <Utente />
