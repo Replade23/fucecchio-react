@@ -67,3 +67,12 @@
     background: #ddd;
     cursor: pointer;
 }
+
+.event-indicator {
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 2px;
+}
