@@ -9,7 +9,7 @@ const EventGrid = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const eventiQuery = query(collection(db, "eventi"), orderBy("data","desc"));
+      const eventiQuery = query(collection(db, "eventi"), orderBy("data", "desc"));
       const querySnapshot = await getDocs(eventiQuery);
       setEventi(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     };
@@ -28,14 +28,14 @@ const EventGrid = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-h-[580px] overflow-y-auto pl-50 overflow-x-hidden">
+    <div className="container mx-auto py-8">
+      <div className="max-h-[590px] overflow-y-auto pl-50 overflow-x-hidden pr-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {eventi.map((evento) => (
             <div
               key={evento.id}
               onClick={() => openModal(evento)}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-lg cursor-pointer"
+              className="bg-white border-10 border-white rounded-2xl overflow-hidden transform transition duration-300 hover:border-gray-300 hover:grayscale-50 hover:bg-gray-300 cursor-pointer"
               style={{ height: "400px", position: "relative" }}
             >
               <img
@@ -57,22 +57,26 @@ const EventGrid = () => {
 
       {/* Modale */}
       {modalOpen && selectedEvento && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-xl max-w-lg w-full p-6 shadow-lg">
-            <div className="flex justify-between items-center">
-              <h3 className="text-2xl text-gray-800 font-semibold">{selectedEvento.titolo}</h3>
-              <button onClick={closeModal} className="text-gray-600 text-2xl">×</button>
-            </div>
-            <div className="mt-4">
+        <div className="fixed inset-0 bg-white/50 flex justify-center items-center z-50">
+          <div className="bg-white rounded-xl max-w-4xl w-full p-6 shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex justify-center items-center">
               <img
                 src={selectedEvento.imageUrl || "https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/326478136_544416744321998_3057692449536040479_n.png?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=VJHTUH-wVn8Q7kNvgHhZzVg&_nc_oc=Adi0LauFqGDXsuKND_Y51_sibpwWZRkybjRMdNDF88OH47p90E3cglqtvT_rsg7Bqyg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=zRNY3IW_UEeDdQ_7l1Fjkw&oh=00_AYE0pWMiLFCxHlGS3V9YBgdgA4F3PVhH7yuDPpKbxYWjbA&oe=67DF4151"}
                 alt={selectedEvento.titolo}
-                className="w-full h-80 object-cover"
+                className="w-full h-full object-cover"
               />
-              <p className="mt-4 text-gray-600">{selectedEvento.descrizione}</p>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl text-gray-800 font-semibold">{selectedEvento.titolo}</h3>
+                <button onClick={closeModal} className="text-gray-600 text-2xl">×</button>
+              </div>
               <small className="text-xs text-gray-500 block mt-3">
                 {selectedEvento.data ? selectedEvento.data.toDate().toLocaleDateString() : "Data non disponibile"}
               </small>
+              <div className="mt-4 overflow-y-auto max-h-96">
+                <p className="text-gray-600">{selectedEvento.descrizione}</p>
+              </div>
             </div>
           </div>
         </div>

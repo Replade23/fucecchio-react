@@ -6,6 +6,9 @@ import { Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Home from '../pages/Home'
 import Eventi from '../pages/Eventi'
 import Utente from '../pages/Utente'
+import bgHome from '../assets/bgHome.jpg'
+import bgEventi from '../assets/bgEventi.jpg'
+import bgUtente from '../assets/bgUtente.jpg'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -23,9 +26,9 @@ export default function Carousel() {
 
     useEffect(() => {
         document.querySelectorAll(".swiper").forEach((el) => {
-          el.swiper.allowTouchMove = false;
+            el.swiper.allowTouchMove = false;
         });
-      }, []);
+    }, []);
 
     return (
         <div className='relative h-7/8'>
@@ -42,15 +45,15 @@ export default function Carousel() {
                     slidesPerView={1}
                     onSwiper={(swiper) => (swiperRef.current = swiper)} // Salviamo l'istanza di Swiper
                 >
-                    <SwiperSlide className='h-full bg-blue-500 text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-cover bg-center text-white text-2xl' style={{ backgroundImage: `url(${bgHome})` }}>
                         <div className='flex justify-center items-center h-full ml-20'>
                             <Home />
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className='h-full bg-blue-500 flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl' style={{ backgroundImage: `url(${bgEventi})` }}>
                         <Eventi />
                     </SwiperSlide>
-                    <SwiperSlide className='h-full bg-blue-500 flex items-center justify-center text-white text-2xl'>
+                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl' style={{ backgroundImage: `url(${bgUtente})` }}>
                         <Utente />
                     </SwiperSlide>
                 </Swiper>

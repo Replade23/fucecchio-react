@@ -42,7 +42,7 @@ export default function UtenteLoggato() {
                 titolo: evento.titolo,
                 descrizione: evento.descrizione,
                 data: Timestamp.fromDate(eventDate),
-                imageUrl: evento.imageUrl || "https://via.placeholder.com/300",
+                imageUrl: evento.imageUrl || "",
             });
 
             setSuccessMessage("Evento creato con successo!");
