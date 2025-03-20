@@ -1,14 +1,17 @@
 import './index.css'
 import Carousel from './component/carousel'
 import Footer from './component/Footer'
-import Logo from './assets/FèL_Logo.png'
+import Logo from './assets/Logo_FèL.svg'
+import { requestNotificationPermission } from './firebase-messaging';
+
+requestNotificationPermission();
 
 function App() {
 
   return (
     <div className="flex flex-col h-screen relative">
       {/* Contenitore del logo con bordo rosso per debug */}
-      <div className="absolute top-0 left-0 bg-white p-4 z-50 rounded-br-4xl">
+      <div className="absolute top-0 left-0 bg-gray-500 p-4 z-50 rounded-br-4xl">
         <img src={Logo} alt="Logo del sito" className="h-23" />
       </div>
       <Carousel />

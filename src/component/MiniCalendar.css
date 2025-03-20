@@ -1,7 +1,7 @@
 /* Stile base del calendario */
 .react-calendar {
     width: 100%; /* Adatta la larghezza */
-  height: 100%; /* Evita che cresca troppo */
+    height: 100%; /* Evita che cresca troppo */
 }
 
 /* Barra di navigazione (mese/anno e frecce) */
@@ -63,16 +63,14 @@
 }
 
 /* Effetto hover sui giorni */
-.react-calendar__tile:hover {
+/* .react-calendar__tile:hover {
     background: #ddd;
     cursor: pointer;
-}
+} */
 
-.event-indicator {
-    width: 6px;
-    height: 6px;
-    background-color: red;
-    border-radius: 50%;
-    margin: auto;
-    margin-top: 2px;
+/* Evidenziazione dei giorni con eventi */
+.event-day {
+    border: 2px solid #0073AB !important;  /* Bordo rosso */
+    border-radius: 6px;  /* Angoli arrotondati */
+    font-weight: bold;  /* Testo più evidente */
 }

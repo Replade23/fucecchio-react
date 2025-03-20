@@ -15,14 +15,11 @@ export default function MiniCalendar() {
         const querySnapshot = await getDocs(collection(db, "eventi"));
         const events = querySnapshot.docs.map((doc) => {
           const firebaseDate = doc.data().data.toDate(); // Converti Timestamp in Date
-          console.log("firebasedate ", firebaseDate);
 
           // Usa moment.js per correggere il fuso orario e formattare la data
           const localDate = moment(firebaseDate)
             .local() // Imposta la data nel fuso orario locale
             .format("YYYY-MM-DD"); // Formatta in "YYYY-MM-DD"
-          
-          console.log("localdate ", localDate);
           return localDate;
         });
 
@@ -35,14 +32,11 @@ export default function MiniCalendar() {
     fetchEvents();
   }, []);
 
-  const tileContent = ({ date, view }) => {
+  const tileClassName = ({ date, view }) => {
     if (view === "month") {
-      // Usa moment.js per normalizzare la data
-      const formattedDate = moment(date).format("YYYY-MM-DD"); // "YYYY-MM-DD"
-      // Confronta la data con quelle degli eventi
+      const formattedDate = moment(date).format("YYYY-MM-DD");
       if (eventDates.includes(formattedDate)) {
-        console.log(eventDates);
-        return <div className="event-indicator"></div>;
+        return "event-day"; // Aggiunge una classe CSS
       }
     }
     return null;
@@ -50,7 +44,7 @@ export default function MiniCalendar() {
 
   return (
     <div className="flex justify-center items-center h-full w-full p-[10px]">
-      <Calendar onChange={setValue} value={value} tileContent={tileContent} />
+      <Calendar onChange={setValue} value={value} tileClassName={tileClassName} />
     </div>
   );
 }
