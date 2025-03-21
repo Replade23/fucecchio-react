@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../../firebaseConfig";
-import { collection, query, orderBy, getDocs } from "firebase/firestore";
+import { db, auth } from "../../firebaseConfig";
+import { collection, query, orderBy, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 
 const EventGrid = () => {
   const [eventi, setEventi] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedEvento, setSelectedEvento] = useState(null);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +21,6 @@ const EventGrid = () => {
       const querySnapshot = await getDocs(eventiQuery);
       setEventi(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     };
-
     fetchData();
   }, []);
 
@@ -27,8 +34,13 @@ const EventGrid = () => {
     setSelectedEvento(null);
   };
 
-  return (
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db, "eventi", id));
+    setEventi(eventi.filter(evento => evento.id !== id));
+    closeModal();
+  };
 
+  return (
     <div className="h-full overflow-y-scroll pl-50 overflow-x-hidden pr-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-8">
         {eventi.map((evento) => (
@@ -54,11 +66,9 @@ const EventGrid = () => {
         ))}
       </div>
 
-
-      {/* Modale */}
       {modalOpen && selectedEvento && (
         <div className="fixed inset-0 bg-white/50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-4xl max-w-4xl w-full p-6 shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-4xl max-w-4xl w-full p-6 shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 relative">
             <div className="flex justify-center items-center">
               <img
                 src={selectedEvento.imageUrl || "https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/326478136_544416744321998_3057692449536040479_n.png?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=VJHTUH-wVn8Q7kNvgHhZzVg&_nc_oc=Adi0LauFqGDXsuKND_Y51_sibpwWZRkybjRMdNDF88OH47p90E3cglqtvT_rsg7Bqyg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=zRNY3IW_UEeDdQ_7l1Fjkw&oh=00_AYE0pWMiLFCxHlGS3V9YBgdgA4F3PVhH7yuDPpKbxYWjbA&oe=67DF4151"}
@@ -78,6 +88,12 @@ const EventGrid = () => {
                 <p className="text-gray-600">{selectedEvento.descrizione}</p>
               </div>
             </div>
+
+            {user && (
+              <div className="absolute bottom-5 right-40 mt-4 mr-4 flex space-x-4">
+                <button onClick={() => handleDelete(selectedEvento.id)} className="bg-red-500 text-white px-4 py-2 rounded-lg">Elimina</button>
+              </div>
+            )}
           </div>
         </div>
       )}

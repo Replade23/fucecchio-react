@@ -1,7 +1,9 @@
 /* Stile base del calendario */
 .react-calendar {
-    width: 100%; /* Adatta la larghezza */
-    height: 100%; /* Evita che cresca troppo */
+    width: 100%;
+    /* Adatta la larghezza */
+    height: 100%;
+    /* Evita che cresca troppo */
 }
 
 /* Barra di navigazione (mese/anno e frecce) */
@@ -14,7 +16,7 @@
 .react-calendar__navigation__label {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
 }
 
 .react-calendar__navigation button {
@@ -23,7 +25,7 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #666;
+    color: #fff;
 }
 
 .react-calendar__navigation button:hover {
@@ -35,7 +37,7 @@
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
-    color: #666;
+    color: #fff;
 }
 
 /* Griglia dei giorni */
@@ -62,15 +64,20 @@
     border-radius: 15%;
 }
 
-/* Effetto hover sui giorni */
-/* .react-calendar__tile:hover {
-    background: #ddd;
-    cursor: pointer;
-} */
+/* Evidenziazione dei giorni festivi */
+.holiday-day {
+    color: red !important;  /* Testo bianco per le festività */
+    font-weight: bold;  /* Rende il testo più evidente */
+}
 
 /* Evidenziazione dei giorni con eventi */
 .event-day {
-    border: 2px solid #0073AB !important;  /* Bordo rosso */
+    border: 2px solid #0073AB !important;  /* Bordo blu per eventi */
     border-radius: 6px;  /* Angoli arrotondati */
     font-weight: bold;  /* Testo più evidente */
+}
+
+/* Stile per i giorni festivi e con eventi */
+.holiday-day.event-day {
+    color: red !important; /* Assicura che il testo rimanga bianco anche nei giorni con eventi */
 }

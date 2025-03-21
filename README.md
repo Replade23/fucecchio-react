@@ -1,12 +1,24 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Per installare le dipendenze e avviare il progetto, eseguire i seguenti comandi:
 
-Currently, two official plugins are available:
+```
+npm install
+npm run dev
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Il sito sarà disponibile all'indirizzo `http://localhost:5173`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Motivazioni del Progetto
+
+Questo sito è stato realizzato con l'obiettivo di creare una piattaforma digitale per l'associazione di cui faccio parte.
+
+---
+
+## Credenziali di Accesso
+
+Utilizza le seguenti credenziali per accedere alla sezione dedicata alla creazione degli eventi:
+
+* **Email:**` andrea.paroli23@gmail.com`
+* **Password:**` test1234`

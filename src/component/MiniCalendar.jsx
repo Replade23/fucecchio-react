@@ -32,12 +32,36 @@ export default function MiniCalendar() {
     fetchEvents();
   }, []);
 
+  const holidays = [
+    // Date fisse delle festività
+    "01-01", // Capodanno
+    "15-08", // Ferragosto
+    "25-12", // Natale
+    "01-11", // Ognissanti
+  ];
+
+  const isHoliday = (date) => {
+    const formattedDate = moment(date).format("MM-DD"); // Formatta solo mese e giorno
+    return holidays.includes(formattedDate) || moment(date).day() === 0; // Domenica
+  };
+
   const tileClassName = ({ date, view }) => {
     if (view === "month") {
       const formattedDate = moment(date).format("YYYY-MM-DD");
+
+      let classes = "";
+
+      // Aggiungi la classe per i giorni con eventi
       if (eventDates.includes(formattedDate)) {
-        return "event-day"; // Aggiunge una classe CSS
+        classes += " event-day "; // Aggiunge una classe CSS per gli eventi
       }
+
+      // Aggiungi la classe per le festività (domeniche o date fisse)
+      if (isHoliday(date)) {
+        classes += " holiday-day "; // Aggiungi una classe CSS per le festività
+      }
+
+      return classes.trim(); // Rimuove eventuali spazi extra tra le classi
     }
     return null;
   };
