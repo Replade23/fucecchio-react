@@ -12,20 +12,20 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'La Mia App PWA',
-        short_name: 'LaMiaApp',
+        name: '#FucecchioèLibera',
+        short_name: '#FèL',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         icons: [
           {
-            src: '/icon-192x192.png',
+            src: './src/asset/web-app-manifest-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/icon-512x512.png',
+            src: './src/asset/web-app-manifest-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }
