@@ -2,5 +2,9 @@
 
 
 @theme {
-    --color-fèl: #0073AB;
+    --color-text: #052a3a;
+    --color-background: #f4fbff;
+    --color-primary: #0073AB;
+    --color-secondary: #faaa7a;
+    --color-accent: #fac647;
 }

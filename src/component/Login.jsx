@@ -17,10 +17,10 @@ const Login = () => {
   };
 
   return (
-    <form className="flex space-y-1 flex-col items-center" onSubmit={handleLogin}>
-      <input className="border" type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-      <input className="border" type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-      <button className="bg-blue-500 w-40 px-1 py-1 rounded-4xl" type="submit">Accedi</button>
+    <form className="flex py-4 gap-4 flex-col items-center" onSubmit={handleLogin}>
+      <input className="pl-2 border" type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+      <input className="pl-2 border" type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+      <button className="bg-primary w-40 px-4 py-1 rounded-4xl cursor-pointer" type="submit">Accedi</button>
     </form>
   );
 };

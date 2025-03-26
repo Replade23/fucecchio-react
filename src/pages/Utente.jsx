@@ -27,8 +27,8 @@ export default function Utente() {
         <div className="w-120 bg-gray-500 px-10 py-10 rounded-4xl">
           {isRegistering ? <SignUp /> : <Login />}
           {/* Bottone per cambiare tra Login e Register */}
-          {isRegistering ? "Hai già un account?" : "Non hai un account?"}
-          <button onClick={() => setIsRegistering(!isRegistering)}>
+          {isRegistering ? "Hai già un account? " : "Non hai un account? "}
+          <button className="hover:cursor-pointer" onClick={() => setIsRegistering(!isRegistering)}>
             {isRegistering ? "Accedi" : "Registrati"}
           </button>
         </div>

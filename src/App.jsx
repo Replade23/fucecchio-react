@@ -1,5 +1,5 @@
 import './index.css';
-import Carousel from './component/carousel';
+import Carousel from './component/Carousel';
 import Footer from './component/Footer';
 import Logo from './assets/Logo_FèL.svg';
 import { useEffect, useRef } from 'react';
@@ -16,9 +16,8 @@ function App() {
     }, []);
 
     return (
-        <div className="flex flex-col h-screen relative">
-            {/* Contenitore del logo con bordo rosso per debug */}
-            <div className="absolute top-0 left-0 bg-gray-500 p-4 z-50 rounded-br-4xl">
+        <div className="flex flex-col h-screen relative text-text">
+            <div className="absolute top-0 left-0 bg-primary p-4 z-50 rounded-br-4xl">
                 <img src={Logo} alt="Logo del sito" className="h-23" />
             </div>
             <Carousel />

@@ -19,7 +19,7 @@ export default function Navbar({ goToSlide }) {
                 <button
                     key={index}
                     onClick={() => handleClick(index)}
-                    className={`p-4 rounded-4xl bg-gray-500 flex items-center transition-all duration-300 
+                    className={`p-4 rounded-4xl ${selected!==index ? 'bg-primary' : 'bg-blue-900'} flex items-center transition-all duration-300 
                         min-w-14 overflow-hidden 
                         ${selected === index ? "w-30" : "w-14"}`}
                 >

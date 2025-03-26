@@ -45,7 +45,8 @@ export default function Carousel() {
                     slidesPerView={1}
                     onSwiper={(swiper) => (swiperRef.current = swiper)} // Salviamo l'istanza di Swiper
                 >
-                    <SwiperSlide className='h-full bg-cover bg-center text-white text-2xl' style={{ backgroundImage: `url(${bgHome})` }}>
+                    <SwiperSlide className='h-full bg-cover bg-center text-white text-2xl'>
+                        <img src={bgHome} className='w-full h-full absolute -inset-6 scale-110 -z-50 blur-xs' />
                         <div className='flex justify-center items-center h-full ml-20'>
                             <Home />
                         </div>
