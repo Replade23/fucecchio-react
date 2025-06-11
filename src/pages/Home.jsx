@@ -7,7 +7,7 @@ export default function Home() {
 
 
     <div className='h-full w-4/5 flex flex-col gap-5 px-5 py-5'>
-      <div className='bg-blue-800 rounded-4xl w-full h-1/2 flex'>
+      <div className='bg-selected rounded-4xl w-full h-1/2 flex'>
         <div className='h-full w-full px-10 py-5 flex flex-col justify-center text-white'>
           <h2 className='text-3xl font-semibold mb-4'>Il Nostro Obiettivo</h2>
           <p className='mb-4 text-sm'>
@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </div>
       <div className='w-full h-1/2 flex space-x-5'>
-        <div className='bg-blue-900 w-1/3 h-full rounded-4xl flex items-center justify-center'>
+        <div className='bg-secondary w-1/3 h-full rounded-4xl flex items-center justify-center'>
           <MiniCalendar />
         </div>
         <div className='bg-gray-400/60 w-2/3 h-full rounded-4xl items-center flex flex-col justify-center'>

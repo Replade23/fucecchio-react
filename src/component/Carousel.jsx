@@ -51,10 +51,11 @@ export default function Carousel() {
                             <Home />
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl' style={{ backgroundImage: `url(${bgEventi})` }}>
+                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl'>
+                        <img src={bgEventi} className='w-full h-full absolute -z-50 blur-xs'/>
                         <Eventi />
                     </SwiperSlide>
-                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl' style={{ backgroundImage: `url(${bgUtente})` }}>
+                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl' style={{ backgroundImage: `url(${bgUtente})`}}>
                         <Utente />
                     </SwiperSlide>
                 </Swiper>

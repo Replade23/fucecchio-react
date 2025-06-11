@@ -51,7 +51,7 @@ const EventGrid = () => {
             style={{ height: "400px", position: "relative" }}
           >
             <img
-              src={evento.imageUrl || "https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/326478136_544416744321998_3057692449536040479_n.png?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=VJHTUH-wVn8Q7kNvgHhZzVg&_nc_oc=Adi0LauFqGDXsuKND_Y51_sibpwWZRkybjRMdNDF88OH47p90E3cglqtvT_rsg7Bqyg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=zRNY3IW_UEeDdQ_7l1Fjkw&oh=00_AYE0pWMiLFCxHlGS3V9YBgdgA4F3PVhH7yuDPpKbxYWjbA&oe=67DF4151"}
+              src={evento.imageUrl || "https://raw.githubusercontent.com/Replade23/f-l_website_storage/refs/heads/main/logos/logo_base_fel.png"}
               alt={evento.titolo}
               className="w-full h-60 object-cover"
             />
@@ -71,7 +71,7 @@ const EventGrid = () => {
           <div className="bg-white rounded-4xl max-w-4xl w-full p-6 shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 relative">
             <div className="flex justify-center items-center">
               <img
-                src={selectedEvento.imageUrl || "https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/326478136_544416744321998_3057692449536040479_n.png?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=VJHTUH-wVn8Q7kNvgHhZzVg&_nc_oc=Adi0LauFqGDXsuKND_Y51_sibpwWZRkybjRMdNDF88OH47p90E3cglqtvT_rsg7Bqyg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=zRNY3IW_UEeDdQ_7l1Fjkw&oh=00_AYE0pWMiLFCxHlGS3V9YBgdgA4F3PVhH7yuDPpKbxYWjbA&oe=67DF4151"}
+                src={selectedEvento.imageUrl || "https://raw.githubusercontent.com/Replade23/f-l_website_storage/refs/heads/main/logos/logo_base_fel.png"}
                 alt={selectedEvento.titolo}
                 className="w-full h-full object-cover"
               />
