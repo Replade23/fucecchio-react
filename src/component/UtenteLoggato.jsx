@@ -61,20 +61,16 @@ export default function UtenteLoggato() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 p-6">
-            {/* Titolo e Logout */}
-            <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-md text-center">
+        <>
+        <div className="flex items-center justify-center h-fit w-fit bg-blue-100 p-1 rounded-xl absolute bottom-2 right-2">
+        <button
+            onClick={handleLogout}
+            className="bg-red-600 text-white text-lg font-bold px-4 py-2 rounded-lg hover:bg-red-800 transition"
+        >Logout</button>
+        </div>
+        <div className="flex items-center justify-center h-fit w-fit bg-blue-100 p-6 rounded-3xl">
+            <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-md">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Area Utente</h2>
-                <button
-                    onClick={handleLogout}
-                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
-                >
-                    Logout
-                </button>
-            </div>
-
-            {/* Form per Creare un Evento */}
-            <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-md mt-6">
                 <h3 className="text-xl font-semibold text-gray-700 mb-4 text-center">Crea un Nuovo Evento</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input
@@ -92,7 +88,7 @@ export default function UtenteLoggato() {
                         value={evento.descrizione}
                         onChange={handleChange}
                         required
-                        className="w-full p-2 border border-gray-100 rounded-lg text-gray-500"
+                        className="w-full p-2 border border-gray-100 rounded-lg text-gray-500 resize-none"
                     />
                     <input
                         type="date"
@@ -124,5 +120,6 @@ export default function UtenteLoggato() {
                 {errorMessage && <p className="text-red-500 text-center mt-2">{errorMessage}</p>}
             </div>
         </div>
+        </>
     );
 }

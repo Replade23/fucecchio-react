@@ -18,19 +18,24 @@ export default function Utente() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-full">
+    <div className="flex justify-center items-center h-full w-full">
       {user ? (
         // Se l'utente è autenticato, mostra la pagina utente
         <UtenteLoggato />
       ) : (
         // Se non è autenticato, mostra il form di login e registrazione
-        <div className="w-120 bg-gray-500 px-10 py-10 rounded-4xl">
-          {isRegistering ? <SignUp /> : <Login />}
-          {/* Bottone per cambiare tra Login e Register */}
-          {isRegistering ? "Hai già un account? " : "Non hai un account? "}
-          <button className="hover:cursor-pointer" onClick={() => setIsRegistering(!isRegistering)}>
-            {isRegistering ? "Accedi" : "Registrati"}
-          </button>
+        <div className="flex items-center justify-center h-fit full bg-blue-100 p-6 rounded-3xl">
+          <div className="w-full max-w-md bg-white p-6 rounded-2xl shadow-md">
+            {isRegistering ? <SignUp /> : <Login />}
+            <div className="flex flex-row items-center justify-center gap-4 w-full">
+            <p className="text-2xl text-gray-800 mb-4">
+            {isRegistering ? "Hai già un account? " : "Non hai un account? "}
+            </p>
+            <button className="hover:cursor-pointer text-2xl font-bold text-gray-800 mb-4" onClick={() => setIsRegistering(!isRegistering)}>
+              {isRegistering ? "Accedi" : "Registrati"}
+            </button>
+          </div>
+          </div>
         </div>
       )}
     </div>

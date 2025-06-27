@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA5Lfr77wHo1MWtEs2TCifJFFu73mQSKpQ",
-  authDomain: "fucecchio-react.firebaseapp.com",
-  projectId: "fucecchio-react",
-  storageBucket: "fucecchio-react.firebasestorage.app",
-  messagingSenderId: "615957528741",
-  appId: "1:615957528741:web:1d67ac7b20e7e1eef50d4c"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

@@ -67,34 +67,39 @@ const EventGrid = () => {
       </div>
 
       {modalOpen && selectedEvento && (
-        <div className="fixed inset-0 bg-white/50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-4xl max-w-4xl w-full p-6 shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+        <div className="fixed inset-0 bg-white/50 flex flex-col justify-center items-center z-50">
+          <div className="bg-white rounded-4xl w-[700px] h-[500px] max-w-full max-h-full p-6 shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 relative overflow-hidden">
+
             <div className="flex justify-center items-center">
               <img
                 src={selectedEvento.imageUrl || "https://raw.githubusercontent.com/Replade23/f-l_website_storage/refs/heads/main/logos/logo_base_fel.png"}
                 alt={selectedEvento.titolo}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex flex-col">
+
+            <div className="flex flex-col h-full">
+
               <div className="flex justify-between items-center">
                 <h3 className="text-2xl text-gray-800 font-semibold">{selectedEvento.titolo}</h3>
                 <button onClick={closeModal} className="text-gray-600 text-2xl">×</button>
               </div>
-              <small className="text-xs text-gray-500 block mt-3">
+
+              <small className="text-xs text-gray-500 block mt-3 mb-4">
                 {selectedEvento.data ? selectedEvento.data.toDate().toLocaleDateString() : "Data non disponibile"}
               </small>
+
               <div className="mt-4 overflow-y-auto max-h-96">
                 <p className="text-gray-600">{selectedEvento.descrizione}</p>
               </div>
             </div>
-
-            {user && (
-              <div className="absolute bottom-5 right-40 mt-4 mr-4 flex space-x-4">
-                <button onClick={() => handleDelete(selectedEvento.id)} className="bg-red-500 text-white px-4 py-2 rounded-lg">Elimina</button>
-              </div>
-            )}
           </div>
+
+          {user && (
+            <div className="mt-4 mr-4 flex space-x-4">
+              <button onClick={() => handleDelete(selectedEvento.id)} className="bg-red-600 text-white text-lg font-bold px-4 py-2 rounded-lg hover:bg-red-800 transition">Elimina</button>
+            </div>
+          )}
         </div>
       )}
     </div>

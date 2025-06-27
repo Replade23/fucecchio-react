@@ -11,19 +11,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
 }
 
 .react-calendar__navigation__label {
-    font-size: 18px;
+    font-size: 18px !important;
     font-weight: bold;
     color: #fff;
 }
 
-.react-calendar__navigation button {
+.react-calendar__navigation > button {
     background: none;
     text-transform: uppercase;
     border: none;
-    font-size: 20px;
+    font-size: 40px;
     cursor: pointer;
     color: #fff;
 }
@@ -45,13 +46,13 @@
     border-radius: 6px;
     text-align: center;
     font-size: 12px;
-    padding: 10px;
+    padding: 4px;
     transition: background 0.3s ease;
 }
 
 /* Giorno selezionato */
 .react-calendar__tile--active {
-    background: #007bff;
+    background: #ffffff44;
     color: white;
     font-weight: bold;
 }
@@ -64,9 +65,15 @@
     border-radius: 15%;
 }
 
+abbr {
+    font-weight: bold;
+    font-size: large;
+}
+
+
 /* Evidenziazione dei giorni festivi */
 .holiday-day {
-    color: red !important;  /* Testo bianco per le festività */
+    color: #8a3d0d !important;  /* Testo bianco per le festività */
     font-weight: bold;  /* Rende il testo più evidente */
 }
 

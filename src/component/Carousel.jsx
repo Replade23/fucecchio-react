@@ -45,18 +45,23 @@ export default function Carousel() {
                     slidesPerView={1}
                     onSwiper={(swiper) => (swiperRef.current = swiper)} // Salviamo l'istanza di Swiper
                 >
-                    <SwiperSlide className='h-full bg-cover bg-center text-white text-2xl'>
+                    <SwiperSlide className='w-screen h-full bg-cover bg-center text-white text-2xl overflow-hidden'>
                         <img src={bgHome} className='w-full h-full absolute -inset-6 scale-110 -z-50 blur-xs' />
                         <div className='flex justify-center items-center h-full ml-20'>
                             <Home />
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl'>
-                        <img src={bgEventi} className='w-full h-full absolute -z-50 blur-xs'/>
-                        <Eventi />
+                    <SwiperSlide className='w-screen h-full bg-cover bg-center text-white text-2xl overflow-hidden'>
+                        <img src={bgEventi} className='w-full h-full absolute -z-50 blur-xs scale-110' />
+                        <div className='flex justify-center items-center h-full ml-20'>
+                            <Eventi />
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className='h-full bg-cover bg-center flex items-center justify-center text-white text-2xl' style={{ backgroundImage: `url(${bgUtente})`}}>
-                        <Utente />
+                    <SwiperSlide className='w-screen h-full bg-cover bg-center text-white text-2xl overflow-hidden'>
+                        <img src={bgUtente} className='w-full h-full absolute -z-50 cover blur-xs scale-110' />
+                        <div className='flex justify-center items-center h-full w-full ml-20'>
+                            <Utente />
+                        </div>
                     </SwiperSlide>
                 </Swiper>
             </div>
